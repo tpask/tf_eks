@@ -6,3 +6,16 @@ See that guide for additional information.
 
 NOTE: This full configuration utilizes the [Terraform http provider](https://www.terraform.io/docs/providers/http/index.html) to call out to icanhazip.com to determine your local workstation external IP for easily configuring EC2 Security Group access to the Kubernetes servers. Feel free to replace this as necessary.
 # tf_eks
+to build nginx, 
+in ../tf_eks
+terraform init
+terraform apply --auto-apply
+
+comfigure kubectl:
+aws eks update-kubeconfig --name ${name} --region ${AWS_REGION}
+
+to start nginx pod:
+  cd nginx
+  terraform init
+  tf apply
+  
